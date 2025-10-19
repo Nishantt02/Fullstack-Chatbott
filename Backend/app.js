@@ -38,7 +38,6 @@
 // });
 
 // export default app;
-
 import express from 'express';
 import router from './Routes/UserRoutes.js';
 import Chatroutes from './Routes/ChatRoutes.js';
@@ -50,17 +49,15 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 
-// ✅ Allow requests from your frontend and others safely
+// ✅ Allowed frontend URLs
 const allowedOrigins = [
-  "https://fullstack-chatbott-11.onrender.com", // frontend
-  "https://fullstack-chatbott-98.onrender.com", // backend (optional)
+  "https://fullstack-chatbott-98.onrender.com", // current frontend
+  "https://fullstack-chatbott-11.onrender.com", // older frontend (optional)
 ];
 
 app.use(cors({
   origin: function(origin, callback) {
-    // allow requests like Postman, curl, or server-to-server (origin undefined)
-    if (!origin) return callback(null, true);  
-    // allow only whitelisted origins
+    if (!origin) return callback(null, true); // allow curl/Postman
     if (allowedOrigins.includes(origin)) return callback(null, true);
     return callback(new Error("CORS error: this origin is not allowed"), false);
   },
@@ -80,7 +77,6 @@ app.use('/Chat', Chatroutes);
 // Serve frontend
 app.use(express.static(path.join(__dirname, "Frontend/dist")));
 
-// Catch-all for React/Vite frontend routing
 app.use((req, res) => {
    res.sendFile(path.join(__dirname, "Frontend/dist/index.html"));
 });
