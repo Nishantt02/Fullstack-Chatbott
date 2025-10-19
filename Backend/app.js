@@ -10,24 +10,12 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 
-// const corsoption={
-//     origin:"https://chatbot-3-zs91.onrender.com",
-//     credentials:true
-// }
-// app.use(cors(corsoption))
-// app.use(cors({ origin: "https://fullstack-chatbott-4.onrender.com", credentials: true }));
-app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://fullstack-chatbott-10.onrender.com"
-  ],
-  credentials: true,
-}));
+const corsoption={
+    origin:"https://fullstack-chatbott-4.onrender.com",
+    credentials:true
+}
+app.use(cors(corsoption))
 
-
-// 
-// app.use(cors());
-// Add this BEFORE your routes
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
   next();
