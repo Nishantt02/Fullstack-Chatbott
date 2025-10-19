@@ -1,5 +1,5 @@
 import React from "react";
-import { ChatData } from "../context/Chatcontext";
+import { ChatData } from "../context/ChatContext";
 
 const Header = () => {
   const { chats } = ChatData();

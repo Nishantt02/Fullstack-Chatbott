@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Header from "../components/Header";
-import { ChatData } from "../context/Chatcontext";
+import { ChatData } from "../context/ChatContext";
 import { CgProfile } from "react-icons/cg";
 import { FaRobot } from "react-icons/fa";
 import { LoadingBig, LoadingSmall } from "../components/Loading";
