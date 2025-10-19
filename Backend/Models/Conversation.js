@@ -22,3 +22,4 @@ const schema = new mongoose.Schema(
 );
 
 export const Conversation = mongoose.model("Conversation", schema);
+export default Conversation
