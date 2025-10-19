@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { ChatProvider } from "./context/Chatcontext";
-import { UserProvider } from "./context/UserContext";
+import { UserProvider } from "./context/UserContext.jsx";
+import { ChatProvider } from "./context/Chatcontext.jsx";
+
 export const server = "http://localhost:5000";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
