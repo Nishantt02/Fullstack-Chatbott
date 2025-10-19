@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { server } from "../main";
 
-const UserContext = createContext();
+const Usercontext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [btnLoading, setBtnLoading] = useState(false);
@@ -98,7 +98,7 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider
+    <Usercontext.Provider
       value={{
         loginUser,
         btnLoading,
@@ -112,8 +112,8 @@ export const UserProvider = ({ children }) => {
     >
       {children}
       <Toaster />
-    </UserContext.Provider>
+    </Usercontext.Provider>
   );
 };
 
-export const UserData = () => useContext(UserContext);
+export const UserData = () => useContext(Usercontext);

@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { server } from "../main";
 import toast from "react-hot-toast";
 
-const ChatContext = createContext();
+const Chatcontext = createContext();
 
 export const ChatProvider = ({ children }) => {
   const [messages, setMessages] = useState([]);
@@ -161,7 +161,7 @@ export const ChatProvider = ({ children }) => {
   }, [selected]);
 
   return (
-    <ChatContext.Provider
+    <Chatcontext.Provider
       value={{
         fetchResponse,
         messages,
@@ -179,8 +179,8 @@ export const ChatProvider = ({ children }) => {
       }}
     >
       {children}
-    </ChatContext.Provider>
+    </Chatcontext.Provider>
   );
 };
 
-export const ChatData = () => useContext(ChatContext);
+export const ChatData = () => useContext(Chatcontext);
