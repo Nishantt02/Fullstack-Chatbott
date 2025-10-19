@@ -10,16 +10,13 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 
-// const corsoption={
-//     origin:"https://fullstack-chatbott-4.onrender.com",
-//     credentials:true
-// }
-//  app.use(cors(corsoption))
 
-app.use(cors({
-  origin: true,   // allow any origin
-  credentials: true
-}));
+
+const corsOption={
+  origin:"https://fullstack-chatbott-11.onrender.com",
+  Credential:true
+}
+app.use(cors(corsOption));
 
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
