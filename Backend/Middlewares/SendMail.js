@@ -2,7 +2,7 @@ import { createTransport } from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
 
-console.log("CLEANED EMAIL:", `"${process.env.Gmail}"`);
+console.log("CLEANED EMAIL:", `"${process.env.GMAIL}"`);
 
 
 const sendMail = async (email, subject, otp) => {
