@@ -15,7 +15,7 @@ app.use(express.json());
 //     credentials:true
 // }
 // app.use(cors(corsoption))
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "https://fullstack-chatbott-4.onrender.com", credentials: true }));
 
 // 
 // app.use(cors());
