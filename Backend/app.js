@@ -12,12 +12,28 @@ app.use(express.json());
 
 
 
-const corsOption={
-  origin:"https://fullstack-chatbott-11.onrender.com",
-  Credential:true
-}
-app.use(cors(corsOption));
+// const corsOption={
+//   origin:"https://fullstack-chatbott-11.onrender.com",
+//   Credential:true
+// }
+// app.use(cors(corsOption));
 
+const allowedOrigins = [
+  "https://fullstack-chatbott-85.onrender.com", // frontend deployed URL
+  "https://fullstack-chatbott-11.onrender.com", // backend URL (optional)
+];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // allow Postman or curl requests
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = "The CORS policy for this site does not allow access from the specified Origin.";
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
+}));
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
   next();
