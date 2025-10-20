@@ -12,7 +12,11 @@ app.use(express.json());
 
 // app.use(cors());
 const corsOptions = {
-  origin: 'https://fullstack-chatbott-21.onrender.com',  // Make sure this matches your frontend's deployed URL
+  origin: [
+   'https://fullstack-chatbott-21.onrender.com', 
+  'https://fullstack-chatbott-100.onrender.com'
+  ],
+   // Make sure this matches your frontend's deployed URL
   methods: ['GET', 'POST','DELETE'],
   credentials: true
 };
