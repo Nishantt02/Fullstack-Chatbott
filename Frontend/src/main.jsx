@@ -6,7 +6,7 @@ import "./index.css";
 import { UserProvider } from "./context/UserContext.jsx"; // Exact match
 import { ChatProvider } from "./context/ChatContext.jsx"; // Exact match
 
-export const server = "https://fullstack-chatbott-11.onrender.com";
+export const server = "http://localhost:5000";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
