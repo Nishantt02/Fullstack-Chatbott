@@ -65,7 +65,7 @@ const sendMail = async (email, subject, otp) => {
 `;
 
   await transport.sendMail({
-    from: process.env.Gmail,
+    from: process.env.GMAIL,
     to: email,
     subject,
     html,
